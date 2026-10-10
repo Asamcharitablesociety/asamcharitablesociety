@@ -236,8 +236,8 @@ footer {
 }
 
 .team-card img {
-    width: 280px;
-    height: 550px;
+    width: 200px;
+    height: 450px;
     object-fit: cover;
     border-radius: 50%;
 }
