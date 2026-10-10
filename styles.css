@@ -222,24 +222,27 @@ footer {
 
 .team-container {
     display: flex;
-     flex-direction: column; /* Stack cards vertically */
-    align-items: center;    /* Center cards horizontally */
+    flex-direction: column;
+    align-items: center;
     gap: 25px;
 }
 
 .team-card {
-    width: 250px;
+    width: 183px;
     background: white;
     border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 
 .team-card img {
-    width: 200px;
-    height: 200px;
+    display: block;
+    width: 100%;
+    height: 235px;
     object-fit: cover;
-    border-radius: 50%;
+    object-position: center top;
+    border-radius: 10px;
 }
 
 .team-card h3 {
