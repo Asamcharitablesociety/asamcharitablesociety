@@ -242,6 +242,7 @@ footer {
     display: block;
     width: auto;
     height: auto;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: center;
     border-radius: 5px !important;
