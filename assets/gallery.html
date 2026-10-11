@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery | Asam Charitable Society</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .gallery-section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 55px 20px;
+        }
+
+        .gallery-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .gallery-heading h2 {
+            color: #003366;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .gallery-heading p {
+            color: #64736b;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .gallery-card {
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #e1e8e2;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+            transition: transform 0.25s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-card img {
+            display: block;
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .gallery-card h3 {
+            margin: 16px 16px 6px;
+            color: #183153;
+            font-size: 18px;
+        }
+
+        .gallery-card p {
+            margin: 0 16px 18px;
+            color: #64736b;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .gallery-section {
+                padding: 35px 14px;
+            }
+
+            .gallery-heading h2 {
+                font-size: 28px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-card img {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="logo-container">
+            <img
+                src="assets/images/logo.jpg"
+                alt="Asam Charitable Society Logo"
+                class="site-logo"
+            >
+
+            <div class="logo-text">
+                <h1>Asam Charitable Society</h1>
+                <p>Empowering Lives</p>
+            </div>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="members.html">Our Team</a></li>
+                <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+                <li><a href="initiatives.html">Initiatives</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-section">
+
+            <div class="gallery-heading">
+                <h2>Our Gallery</h2>
+                <p>
+                    Moments of service, compassion and community development.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+
+                <article class="gallery-card">
+                    <img
+                        src="assets/images/gallery/Clothes-Distribution.jpg"
+                        alt="Clothes distribution event"
+                        loading="lazy"
+                    >
+                    <h3>Clothes Distribution</h3>
+                    <p>Serving our community with care.</p>
+                </article>
+
+                <article class="gallery-card">
+                    <img
+                        src="assets/images/gallery/Food-Distribution.jpg"
+                        alt="Community health camp"
+                        loading="lazy"
+                    >
+                    <h3>Health Camp</h3>
+                    <p>Supporting community health and wellbeing.</p>
+                </article>
+
+                <article class="gallery-card">
+                    <img
+                        src="assets/images/gallery/Books-Stationary-Distribuion.jpg"
+                        alt="Educational support activity"
+                        loading="lazy"
+                    >
+                    <h3>Education Support</h3>
+                    <p>Encouraging learning and opportunity.</p>
+                </article>
+
+                <article class="gallery-card">
+                    <img
+                        src="assets/images/gallery/volunteers.jpg"
+                        alt="Charitable society volunteers"
+                        loading="lazy"
+                    >
+                    <h3>Volunteer Activities</h3>
+                    <p>Working together to make a difference.</p>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2024–Present Asam Charitable Society.
+            All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
