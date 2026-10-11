@@ -10,15 +10,16 @@ window.GALLERY_PHOTOS = [
     },
     {
         url: "assets/images/events/Books-Stationary-Distribution/IMG-20251205-WA0002.jpg",
-        
+      
     },
     {
         url: "assets/images/events/Books-Stationary-Distribution/IMG-20251205-WA0003.jpg",
         
+        
     },
     {
         url: "assets/images/events/Books-Stationary-Distribution/IMG-20251205-WA0004.jpg",
-    
+        
     },
     {
         url: "assets/images/events/Clothes-Distribution/Event 1 Vastra dan.jpg",
