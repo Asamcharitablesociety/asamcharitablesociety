@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,51 +10,38 @@
 
     <link rel="stylesheet" href="styles.css">
 
-    <body>
-        <header>
-            <h1>Asam Charitable Society</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="members.html">Our Team</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="initiatives.html">Initiatives</a></li>
-                    <li><a href="donate.html">Donate</a></li>
-                    <li><a href="#contact">Contact</a></li> <!-- Changed to same-page anchor -->
-                    <li><a href="admin.html">Admin</a></li> <!-- Fixed -->
-                </ul>
-            </nav>
-        </header>
-  
     <style>
+        /* Gallery section spacing */
         .gallery-section {
             max-width: 1200px;
-            margin: auto;
-            padding: 55px 20px;
+            margin: 0 auto;
+            padding: 10px 20px 45px;
         }
 
         .gallery-heading {
             text-align: center;
-            margin-bottom: 30px;
+            margin: 0 0 20px;
+            padding: 0;
         }
 
         .gallery-heading h2 {
             color: #003366;
             font-size: 34px;
-            margin-bottom: 10px;
+            margin: 0 0 10px;
+            padding: 0;
         }
 
         .gallery-heading p {
             color: #64736b;
             line-height: 1.7;
+            margin: 0;
         }
 
         .gallery-count {
             text-align: center;
             color: #64736b;
             font-size: 14px;
-            margin-bottom: 25px;
+            margin: 0 0 25px;
         }
 
         .gallery-grid {
@@ -118,6 +106,7 @@
             align-items: center;
             justify-content: center;
             padding: 60px 20px;
+            box-sizing: border-box;
         }
 
         .lightbox.active {
@@ -151,6 +140,7 @@
             text-align: center;
         }
 
+        /* Tablet */
         @media (max-width: 800px) {
             .gallery-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -158,9 +148,10 @@
             }
         }
 
+        /* Mobile */
         @media (max-width: 500px) {
             .gallery-section {
-                padding: 35px 14px;
+                padding: 8px 14px 35px;
             }
 
             .gallery-heading h2 {
@@ -180,9 +171,9 @@
 
 <body>
 
-    <!-- Website Header -->
-
-        </a>
+    <!-- Website Header: Keep only one header -->
+    <header>
+        <h1>Asam Charitable Society</h1>
 
         <nav aria-label="Main navigation">
             <ul>
@@ -190,9 +181,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="members.html">Our Team</a></li>
                 <li>
-                    <a href="gallery.html" aria-current="page">
-                        Gallery
-                    </a>
+                    <a href="gallery.html" aria-current="page">Gallery</a>
                 </li>
                 <li><a href="initiatives.html">Initiatives</a></li>
                 <li><a href="donate.html">Donate</a></li>
@@ -200,7 +189,6 @@
                 <li><a href="admin.html">Admin</a></li>
             </ul>
         </nav>
-
     </header>
 
     <!-- Main Gallery -->
@@ -210,7 +198,6 @@
 
             <div class="gallery-heading">
                 <h2>Our Gallery</h2>
-
                 <p>
                     Moments of service, compassion and community development.
                 </p>
@@ -225,11 +212,9 @@
             </p>
 
             <div class="gallery-grid" id="galleryGrid">
-
                 <div class="gallery-message">
                     Loading gallery photos...
                 </div>
-
             </div>
 
         </section>
@@ -245,7 +230,6 @@
         aria-label="Photo preview"
         aria-hidden="true"
     >
-
         <button
             type="button"
             class="lightbox-close"
@@ -256,7 +240,6 @@
         <img id="lightboxImage" src="" alt="">
 
         <p class="lightbox-caption" id="lightboxCaption"></p>
-
     </div>
 
     <!-- Website Footer -->
@@ -267,7 +250,7 @@
         </p>
     </footer>
 
-    <!-- Load photo list first -->
+    <!-- Load gallery data -->
     <script src="gallery-data.js"></script>
 
     <script>
@@ -334,7 +317,7 @@
         }
 
 
-        // Create a gallery card.
+        // Create an individual gallery card.
         function createGalleryCard(photo) {
             const card = document.createElement("article");
             card.className = "gallery-card";
@@ -345,12 +328,24 @@
             image.alt = photo.title || "Community activity photo";
             image.loading = "lazy";
             image.decoding = "async";
+            image.tabIndex = 0;
 
             image.addEventListener("click", () => {
                 openLightbox(
                     photo.url,
                     photo.title || "Gallery Photo"
                 );
+            });
+
+            image.addEventListener("keydown", event => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+
+                    openLightbox(
+                        photo.url,
+                        photo.title || "Gallery Photo"
+                    );
+                }
             });
 
             image.addEventListener("error", () => {
@@ -387,7 +382,6 @@
 
                 const message = document.createElement("div");
                 message.className = "gallery-message";
-
                 message.textContent =
                     "Gallery data not found. Please check gallery-data.js.";
 
@@ -402,7 +396,6 @@
             if (photos.length === 0) {
                 const message = document.createElement("div");
                 message.className = "gallery-message";
-
                 message.textContent =
                     "No photos have been added to the gallery yet.";
 
@@ -415,7 +408,9 @@
             const fragment = document.createDocumentFragment();
 
             photos.forEach(photo => {
-                fragment.appendChild(createGalleryCard(photo));
+                if (photo && typeof photo.url === "string" && photo.url) {
+                    fragment.appendChild(createGalleryCard(photo));
+                }
             });
 
             galleryGrid.appendChild(fragment);
@@ -434,7 +429,10 @@
         });
 
         document.addEventListener("keydown", event => {
-            if (event.key === "Escape") {
+            if (
+                event.key === "Escape" &&
+                lightbox.classList.contains("active")
+            ) {
                 closeLightbox();
             }
         });

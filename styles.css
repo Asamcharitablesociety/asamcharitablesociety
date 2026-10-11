@@ -915,8 +915,46 @@ header.site-header {
     }
 }
 
+
+/* Reduce space between navigation and gallery heading */
+main {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
 .gallery-section {
     max-width: 1200px;
-    margin: auto;
-    padding: 5px 5px;
+    margin: 0 auto;
+    padding: 10px 20px 40px;
+}
+
+.gallery-heading {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.gallery-heading h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+header {
+    margin-bottom: 0;
+}
+
+header nav {
+    margin-bottom: 0;
+}
+
+main {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.gallery-section {
+    padding-top: 10px;
+}
+
+.gallery-heading {
+    margin-top: 0;
 }
