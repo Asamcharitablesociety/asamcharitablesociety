@@ -344,10 +344,8 @@ footer {
 .event-block img {
 
     width: 100%;
-
-    height: 220px;
-
-    object-fit: cover;
+    height:220px;
+    object-fit:cover;
 }
 
 .event-content {
@@ -385,6 +383,7 @@ footer {
     margin-bottom: 8px;
 }
 
+
 /* Mobile */
 
 @media (max-width: 768px) {
@@ -403,3 +402,78 @@ footer {
         text-align: left;
     }
 }
+
+
+/* Recent Events */
+
+#recent-events {
+    padding: 60px 20px;
+    background: #f8fafc;
+    text-align: center;
+}
+
+#recent-events h2 {
+    font-size: 2rem;
+    color: #183153;
+    margin-bottom: 15px;
+}
+
+#recent-events p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.event-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.event-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.event-card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.event-card-content h3 {
+    color: #183153;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.event-card-content p {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.events-button {
+    margin-top: 35px;
+}
+
+.events-button .btn {
+    display: inline-block;
+    background: #0056b3
