@@ -6,23 +6,19 @@ window.GALLERY_PHOTOS = [
     },
     {
         url: "assets/images/events/Books-Stationary-Distribution/IMG-20251205-WA0001.jpg",
-        title: "Books & Stationary Distribution 2",
-        folder: "Books-Stationary-Distribution"
+        
     },
     {
         url: "assets/images/events/Books-Stationary-Distribution/IMG-20251205-WA0002.jpg",
-        title: "Books & Stationary Distribution 2",
-        folder: "Books-Stationary-Distribution"
+        
     },
     {
         url: "assets/images/events/Books-Stationary-Distribution/IMG-20251205-WA0003.jpg",
-        title: "Books & Stationary Distribution 2",
-        folder: "Books-Stationary-Distribution"
+        
     },
     {
         url: "assets/images/events/Books-Stationary-Distribution/IMG-20251205-WA0004.jpg",
-        title: "Books & Stationary Distribution 2",
-        folder: "Books-Stationary-Distribution"
+    
     },
     {
         url: "assets/images/events/Clothes-Distribution/Event 1 Vastra dan.jpg",
