@@ -4,39 +4,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team</title>
+
+    <title>Our Team | Asam Charitable Society</title>
+
     <link rel="stylesheet" href="styles.css">
 
     <style>
+        /* Team section */
+        .team-section {
+            width: min(1200px, 92%);
+            margin: 0 auto;
+            padding: 48px 0 64px;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            font-size: clamp(28px, 4vw, 38px);
+            margin: 0 0 36px;
+            color: #183153;
+        }
+
+        /* Professional responsive grid */
         .team-container {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
+            gap: 28px;
+            align-items: stretch;
         }
 
+        /* Individual member card */
         .team-card {
             min-width: 0;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+
+            background: #ffffff;
+            border: 1px solid #e5eaf0;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(20, 40, 70, 0.06);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
+        .team-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 26px rgba(20, 40, 70, 0.12);
+        }
+
+        /* Uniform image frame */
         .team-card img {
             display: block;
             width: 100%;
-            height: 300px;
+            height: 280px;
             object-fit: contain;
             object-position: center;
-            border-radius: 5px;
-            margin: 0 auto;
+            border-radius: 8px;
+            margin: 0 auto 16px;
+            background: #f5f7fa;
         }
 
-        @media (max-width: 768px) {
+        /* Member name */
+        .team-card h3 {
+            width: 100%;
+            margin: 0 0 8px;
+            color: #183153;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.4;
+            overflow-wrap: anywhere;
+        }
+
+        /* Member designation */
+        .team-card p {
+            margin: 0;
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .team-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+            }
+
+            .team-card img {
+                height: 260px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 520px) {
+            .team-section {
+                width: 94%;
+                padding: 32px 0 44px;
+            }
+
+            .team-section h2 {
+                margin-bottom: 24px;
+            }
+
             .team-container {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 12px;
             }
 
+            .team-card {
+                padding: 10px;
+                border-radius: 10px;
+            }
+
             .team-card img {
-                height: 220px;
+                height: 180px;
+                margin-bottom: 12px;
+            }
+
+            .team-card h3 {
+                font-size: 14px;
+            }
+
+            .team-card p {
+                font-size: 12px;
+            }
+        }
+
+        /* Very small phones */
+        @media (max-width: 360px) {
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+
+            .team-card img {
+                height: 260px;
+            }
+
+            .team-card h3 {
+                font-size: 17px;
+            }
+
+            .team-card p {
+                font-size: 14px;
+            }
+        }
+
+        /* Respect reduced-motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .team-card {
+                transition: none;
+            }
+
+            .team-card:hover {
+                transform: none;
             }
         }
     </style>
