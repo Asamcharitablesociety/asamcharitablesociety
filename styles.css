@@ -403,23 +403,32 @@ footer {
     }
 }
 
-
+#team-preview,
 #recent-events {
-    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+#recent-events {
     background: #f8fafc;
 }
 
 #recent-events h2 {
-    font-size: 2rem;
-    color: #183153;
-    margin-bottom: 15px;
     text-align: left;
+    color: #183153;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 #recent-events p {
-    max-width: 700px;
-    margin: 0 0 40px 0;
-    color: #555;
-    line-height: 1.7;
     text-align: left;
+    max-width: 700px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
