@@ -914,3 +914,9 @@ header.site-header {
         white-space: normal;
     }
 }
+
+.gallery-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 20px;
+}
