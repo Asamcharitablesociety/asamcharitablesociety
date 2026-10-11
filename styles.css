@@ -432,3 +432,25 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
+
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+}
+
+.logo-text h1{
+    margin:0;
+}
+
+.logo-text p{
+    margin:0;
+    color:#fff;
+    font-size:14px;
+}
