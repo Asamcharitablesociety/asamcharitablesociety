@@ -30,11 +30,7 @@ window.GALLERY_PHOTOS = [
         title: "Clothes Distribution",
         folder: "Clothes-Distribution"
     },
-    {
-        url: "assets/images/events/Clothes-Distribution/Clothes-Distribution0.jpg",
-        title: "Clothes Distribution",
-        folder: "Clothes-Distribution"
-    },
+    
     {
         url: "assets/images/events/Clothes-Distribution/Clothes-Distribution1.jpg",
         title: "Clothes Distribution",
