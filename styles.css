@@ -292,3 +292,106 @@ footer {
         height:280px;
     }
 }
+
+#initiatives {
+    padding: 60px 0;
+}
+
+#initiatives .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#initiatives h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #183153;
+    margin-bottom: 15px;
+}
+
+#initiatives > .container > p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Event Cards */
+
+.event-block {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    background: #fff;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    margin-bottom: 35px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Images */
+
+.event-block img {
+    width: 320px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    flex-shrink: 0;
+}
+
+/* Content */
+
+.event-content {
+    flex: 1;
+}
+
+.event-content h3 {
+    color: #183153;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.event-content p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.event-content ul {
+    padding-left: 20px;
+}
+
+.event-content li {
+    margin-bottom: 8px;
+    color: #444;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .event-block {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-block img {
+        width: 100%;
+        height: 230px;
+    }
+
+    .event-content ul {
+        text-align: left;
+    }
+}
