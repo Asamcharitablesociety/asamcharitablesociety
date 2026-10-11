@@ -1,4 +1,4 @@
-
+HTML
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +19,7 @@
 
         .gallery-heading {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .gallery-heading h2 {
@@ -32,6 +32,13 @@
             color: #64736b;
         }
 
+        .gallery-count {
+            text-align: center;
+            color: #64736b;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -40,7 +47,7 @@
 
         .gallery-card {
             overflow: hidden;
-            background: #ffffff;
+            background: #fff;
             border: 1px solid #e1e8e2;
             border-radius: 12px;
             box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
@@ -57,18 +64,70 @@
             height: 240px;
             object-fit: cover;
             object-position: center;
+            cursor: pointer;
+            background: #f1f3f1;
         }
 
         .gallery-card h3 {
             margin: 16px 16px 6px;
             color: #183153;
             font-size: 18px;
+            overflow-wrap: anywhere;
         }
 
         .gallery-card p {
             margin: 0 16px 18px;
             color: #64736b;
             font-size: 14px;
+        }
+
+        .gallery-message {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 35px 15px;
+            color: #64736b;
+        }
+
+        /* Full-size image preview */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 55px 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 82vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 12px;
+            right: 22px;
+            border: 0;
+            background: transparent;
+            color: white;
+            font-size: 38px;
+            cursor: pointer;
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 10px;
+            left: 15px;
+            right: 15px;
+            text-align: center;
+            color: white;
         }
 
         @media (max-width: 800px) {
@@ -138,51 +197,43 @@
                 </p>
             </div>
 
-            <div class="gallery-grid">
+            <p
+                class="gallery-count"
+                id="galleryCount"
+                aria-live="polite"
+            >
+                Loading photos...
+            </p>
 
-                <article class="gallery-card">
-                    <img
-                        src="assets/images/gallery/Clothes-Distribution.jpg"
-                        alt="Clothes distribution event"
-                        loading="lazy"
-                    >
-                    <h3>Clothes Distribution</h3>
-                    <p>Serving our community with care.</p>
-                </article>
-
-                <article class="gallery-card">
-                    <img
-                        src="assets/images/gallery/Food-Distribution.jpg"
-                        alt="Community health camp"
-                        loading="lazy"
-                    >
-                    <h3>Health Camp</h3>
-                    <p>Supporting community health and wellbeing.</p>
-                </article>
-
-                <article class="gallery-card">
-                    <img
-                        src="assets/images/gallery/Books-Stationary-Distribuion.jpg"
-                        alt="Educational support activity"
-                        loading="lazy"
-                    >
-                    <h3>Education Support</h3>
-                    <p>Encouraging learning and opportunity.</p>
-                </article>
-
-                <article class="gallery-card">
-                    <img
-                        src="assets/images/gallery/volunteers.jpg"
-                        alt="Charitable society volunteers"
-                        loading="lazy"
-                    >
-                    <h3>Volunteer Activities</h3>
-                    <p>Working together to make a difference.</p>
-                </article>
-
+            <div class="gallery-grid" id="galleryGrid">
+                <div class="gallery-message">
+                    Loading gallery photos...
+                </div>
             </div>
+
         </section>
     </main>
+
+    <!-- Full-size photo preview -->
+    <div
+        class="lightbox"
+        id="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Photo preview"
+        aria-hidden="true"
+    >
+        <button
+            type="button"
+            class="lightbox-close"
+            id="lightboxClose"
+            aria-label="Close photo preview"
+        >&times;</button>
+
+        <img id="lightboxImage" src="" alt="">
+
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
 
     <footer>
         <p>
@@ -190,6 +241,149 @@
             All Rights Reserved.
         </p>
     </footer>
+
+    <script>
+        const galleryGrid = document.getElementById('galleryGrid');
+        const galleryCount = document.getElementById('galleryCount');
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxClose = document.getElementById('lightboxClose');
+
+        function formatTitle(filename) {
+            return filename
+                .replace(/[-_]+/g, ' ')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .replace(/\b\w/g, char => char.toUpperCase());
+        }
+
+        function openLightbox(url, title) {
+            lightboxImage.src = url;
+            lightboxImage.alt = title;
+            lightboxCaption.textContent = title;
+
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+            lightboxClose.focus();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightbox.setAttribute('aria-hidden', 'true');
+            lightboxImage.src = '';
+        }
+
+        function createCard(photo) {
+            const card = document.createElement('article');
+            card.className = 'gallery-card';
+
+            const image = document.createElement('img');
+            image.src = photo.url;
+            image.alt = formatTitle(photo.title);
+            image.loading = 'lazy';
+            image.decoding = 'async';
+
+            image.addEventListener('click', () => {
+                openLightbox(photo.url, formatTitle(photo.title));
+            });
+
+            image.addEventListener('error', () => {
+                card.remove();
+                updateCount();
+            });
+
+            const heading = document.createElement('h3');
+            heading.textContent = formatTitle(photo.title);
+
+            const description = document.createElement('p');
+            description.textContent =
+                'Event: ' + formatTitle(photo.folder);
+
+            card.append(image, heading, description);
+
+            return card;
+        }
+
+        function updateCount() {
+            const count =
+                galleryGrid.querySelectorAll('.gallery-card').length;
+
+            galleryCount.textContent =
+                count + (count === 1
+                    ? ' photo displayed'
+                    : ' photos displayed');
+        }
+
+        async function loadGallery() {
+            try {
+                const response = await fetch('gallery-images.php');
+
+                if (!response.ok) {
+                    throw new Error('Unable to load photos');
+                }
+
+                const photos = await response.json();
+
+                if (!Array.isArray(photos)) {
+                    throw new Error(
+                        photos.error || 'Invalid gallery response'
+                    );
+                }
+
+                galleryGrid.replaceChildren();
+
+                if (photos.length === 0) {
+                    galleryGrid.innerHTML =
+                        '<div class="gallery-message">' +
+                        'No JPG photos were found in the events folders.' +
+                        '</div>';
+
+                    galleryCount.textContent = '0 photos';
+                    return;
+                }
+
+                const fragment = document.createDocumentFragment();
+
+                photos.forEach(photo => {
+                    fragment.appendChild(createCard(photo));
+                });
+
+                galleryGrid.appendChild(fragment);
+                updateCount();
+
+            } catch (error) {
+                console.error(error);
+
+                galleryGrid.replaceChildren();
+
+                const message = document.createElement('div');
+                message.className = 'gallery-message';
+                message.textContent =
+                    'Unable to load photos. Please check your PHP server and events folder.';
+
+                galleryGrid.appendChild(message);
+                galleryCount.textContent = 'Gallery unavailable';
+            }
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', event => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        loadGallery();
+    </script>
 
 </body>
 </html>
