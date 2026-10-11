@@ -26,32 +26,26 @@ window.GALLERY_PHOTOS = [
     },
     {
         url: "assets/images/events/Clothes-Distribution/Event 1 Vastra dan.jpg",
-        title: "Clothes Distribution",
-        folder: "Clothes"
+     
     },
     {
         url: "assets/images/events/Clothes-Distribution/IMG-20251205-WA0001.jpg",
-        title: "Clothes Distribution 2",
-        folder: "Clothes"
+        
     },
     {
         url: "assets/images/events/Clothes-Distribution/IMG-20260510-WA0001.jpg",
-        title: "Clothes Distribution 2",
-        folder: "Clothes"
+       
     },
     {
         url: "assets/images/events/Clothes-Distribution/IMG-20260510-WA0002.jpg",
-        title: "Clothes Distribution 2",
-        folder: "Clothes"
+      
     },
     {
         url: "assets/images/events/Clothes-Distribution/IMG-20260510-WA0003.jpg",
-        title: "Clothes Distribution 2",
-        folder: "Clothes"
+       
     },
     {
         url: "assets/images/events/Food-Distribution/IMG-20261006-WA0002.jpg",
-        title: "Food Distribution",
-        folder: "Food"
+    
     }
 ];
