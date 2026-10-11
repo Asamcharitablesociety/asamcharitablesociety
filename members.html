@@ -6,6 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Team</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .team-card {
+            min-width: 0;
+            text-align: center;
+        }
+
+        .team-card img {
+            display: block;
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .team-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .team-card img {
+                height: 220px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -26,49 +60,49 @@
             <p>President</p>
         </div>
 
-          <div class="team-card">
+        <div class="team-card">
             <img src="assets/Vice President.jpg" alt="Asam Ramesh Reddy">
             <h3>Asam Ramesh Reddy</h3>
             <p>Vice President</p>
         </div>
 
-          <div class="team-card">
+        <div class="team-card">
             <img src="assets/Secretary.jpg" alt="Muneendra Naik">
             <h3>B. Muneendra Naik</h3>
             <p>Secretary</p>
         </div>
 
-          <div class="team-card">
+        <div class="team-card">
             <img src="assets/Joint Secretary.jpg" alt="Asam Raghunath Reddy">
             <h3>Asam Raghunath Reddy</h3>
             <p>Joint Secretary</p>
         </div>
 
-          <div class="team-card">
+        <div class="team-card">
             <img src="assets/Treasurer.jpg" alt="M. Venkata Subbaiah">
             <h3>M. Venkata Subbaiah</h3>
             <p>Treasurer</p>
         </div>
 
-          <div class="team-card">
+        <div class="team-card">
             <img src="assets/Executive Member 1.jpg" alt="Mitta Radhika">
             <h3>Mitta Radhika</h3>
             <p>Executive Member</p>
         </div>
 
-           <div class="team-card">
+        <div class="team-card">
             <img src="assets/Executive Member 2.jpg" alt="Asam Ramadevi">
             <h3>Asam Ramadevi</h3>
             <p>Executive Member</p>
         </div>
 
-          <div class="team-card">
+        <div class="team-card">
             <img src="assets/Executive Member 3.jpg" alt="Pitta Subbaiah">
-            <h3></P>Pitta Subbaiah</h3>
+            <h3>Pitta Subbaiah</h3>
             <p>Executive Member</p>
         </div>
 
-          <div class="team-card">
+        <div class="team-card">
             <img src="assets/Volunteer 1.jpg" alt="Sireesha Reddy">
             <h3>Sireesha Reddy</h3>
             <p>Volunteer</p>
