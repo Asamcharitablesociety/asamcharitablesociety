@@ -1,120 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Asam Charitable Society</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 
-<body>
+<section id="contact">
+    <div class="container">
 
-    <header>
-        <h1>Contact Us</h1>
+        <h2>Volunteer With Us</h2>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="members.html">Our Team</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="initiatives.html">Initiatives</a></li>
-                <li><a href="donate.html">Donate</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="admin.html">Admin</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="contact">
-
-        <div class="container">
-
-            <h2>Volunteer With Us</h2>
-
-            <p>
-                Join our mission to serve communities and create a positive impact.
-                Complete the form below and our team will review your application.
-                Approved applicants may be contacted for volunteering opportunities
-                and future initiatives.
-            </p>
-
-            https://formsubmit.co/asam.charitablesociety@gmail.com
-
-                <!-- FormSubmit Settings -->
-                <input type="hidden" name="_captcha" value="false">
-
-                <input type="hidden"
-                       name="_subject"
-                       value="New Volunteer Registration Request">
-
-                <input type="hidden"
-                       name="_next"
-                       value="https://asamcharitablesociety.com/thank-you.html">
-
-                <div class="form-group">
-                    <label for="name">Full Name:</label>
-
-                    <input type="text"
-                           id="name"
-                           name="Full Name"
-                           required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-
-                    <input type="email"
-                           id="email"
-                           name="Email Address"
-                           required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Mobile Number:</label>
-
-                    <input type="tel"
-                           id="phone"
-                           name="Mobile Number"
-                           required>
-                </div>
-
-                <div class="form-group">
-                    <label for="interest">Area of Interest:</label>
-
-                    <input type="text"
-                           id="interest"
-                           name="Area of Interest"
-                           placeholder="Education, Healthcare, Elderly Care, Orphanage Support, Rural Development">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">
-                        Why would you like to volunteer with us?
-                    </label>
-
-                    <textarea id="message"
-                              name="Message"
-                              rows="5"
-                              placeholder="Tell us briefly about yourself and how you would like to contribute."></textarea>
-                </div>
-
-                <button type="submit" class="cta-button">
-                    Submit for Approval
-                </button>
-
-            </form>
-
-        </div>
-
-    </section>
-
-    <footer>
         <p>
-            &copy; 2024-Present Asam Charitable Society.
-            All Rights Reserved.
+            Join our mission to serve communities and create a positive impact.
+            Complete the form below and our team will review your application.
+            Approved applicants may be contacted for volunteering opportunities
+            and future initiatives.
         </p>
-    </footer>
 
-</body>
-</html>
+        <!-- Volunteer Registration Form -->
+        <form
+            action="https://formsubmit.co/asam.charitablesociety@gmail.com"
+            method="POST"
+        >
+
+            <!-- Email settings -->
+            <input
+                type="hidden"
+                name="_subject"
+                value="New Volunteer Registration Request"
+            >
+
+            <input
+                type="hidden"
+                name="_next"
+                value="https://asamcharitablesociety.com/thank-you.html"
+            >
+
+            <!-- Recommended spam protection: leave CAPTCHA enabled -->
+
+            <input
+                type="hidden"
+                name="_template"
+                value="table"
+            >
+
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="Full Name"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Mobile Number:</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    name="Mobile Number"
+                    autocomplete="tel"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="interest">Area of Interest:</label>
+                <input
+                    type="text"
+                    id="interest"
+                    name="Area of Interest"
+                    placeholder="Education, Healthcare, Elderly Care, etc."
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="message">
+                    Why would you like to volunteer with us?
+                </label>
+
+                <textarea
+                    id="message"
+                    name="Message"
+                    rows="5"
+                    placeholder="Tell us how you would like to contribute."
+                ></textarea>
+            </div>
+
+            <button type="submit" class="cta-button">
+                Submit for Approval
+            </button>
+
+        </form>
+
+    </div>
+</section>
