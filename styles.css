@@ -1034,21 +1034,46 @@ main {
     line-height: 1.8;
     font-size: 1.05rem;
 }
+/* Volunteer Section */
 
-.volunteer-action {
-    margin-top: 35px;
+#contact {
+    padding: 100px 20px;
+    background: #f8fafc;
+}
+
+.volunteer-box {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.volunteer-box h2 {
+    color: #183153;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.volunteer-description {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
 }
 
 .volunteer-btn {
     display: inline-block;
+    margin-top: 15px;
+    padding: 15px 35px;
     background: #183153;
-    color: #ffffff;
-    padding: 14px 35px;
-    border-radius: 8px;
+    color: white;
     text-decoration: none;
-    font-size: 1rem;
     font-weight: 600;
-    transition: 0.3s ease;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .volunteer-btn:hover {
@@ -1057,7 +1082,14 @@ main {
 }
 
 .volunteer-note {
-    margin-top: 15px;
-    font-size: 0.9rem;
+    margin-top: 20px;
     color: #777;
+    font-size: 0.95rem;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #183153;
+    color: white;
 }
