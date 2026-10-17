@@ -1034,104 +1034,134 @@ main {
     line-height: 1.8;
     font-size: 1.05rem;
 }
-/* Volunteer Section */
+
+/* =========================
+   VOLUNTEER PAGE
+========================= */
 
 #contact {
-    padding: 100px 20px;
-    background: #f8fafc;
-}
-#contact {
-    padding: 80px 20px;
     background: #f5f7fa;
+    padding: 80px 20px;
+    min-height: 65vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.volunteer-box {
-    max-width: 1000px;
-    margin: auto;
+.volunteer-container {
+    max-width: 900px;
+    width: 100%;
     text-align: center;
+
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.volunteer-box h2 {
-    color: #183153;
-    font-size: 2.8rem;
+.volunteer-container h2 {
+    font-size: 2.6rem;
+    color: #0B3B75;
     margin-bottom: 10px;
 }
 
 .volunteer-subtitle {
     font-size: 1.2rem;
     color: #28a745;
-    margin-bottom: 30px;
     font-weight: 600;
-}
-
-.volunteer-image {
-    width: 100%;
-    max-height: 420px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .volunteer-description {
-    max-width: 800px;
-    margin: auto;
     color: #555;
     line-height: 1.8;
-    margin-bottom: 35px;
+    font-size: 1.05rem;
+    max-width: 700px;
+    margin: 0 auto 35px;
 }
 
 .volunteer-highlights {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    max-width: 700px;
+    margin: 0 auto 40px;
 }
 
-.highlight-card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+.highlight-item {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 10px;
+
     font-weight: 600;
     color: #183153;
+
+    border-left: 4px solid #0B3B75;
 }
 
 .volunteer-btn {
     display: inline-block;
-    background: #183153;
-    color: white;
-    padding: 16px 40px;
-    border-radius: 50px;
+
+    background: #0B3B75;
+    color: #fff;
+
     text-decoration: none;
+
+    padding: 16px 40px;
+    font-size: 1rem;
     font-weight: 600;
-    transition: 0.3s ease;
+
+    border-radius: 50px;
+
+    transition: all 0.3s ease;
 }
 
 .volunteer-btn:hover {
-    background: #28a745;
+    background: #1459a6;
     transform: translateY(-3px);
 }
 
 .volunteer-note {
     margin-top: 25px;
-    font-style: italic;
+
     color: #183153;
+
+    font-style: italic;
     font-weight: 600;
 }
 
+/* Active Menu */
+
+nav .active {
+    border: 2px solid white;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+/* Mobile */
+
 @media (max-width: 768px) {
+
+    .volunteer-container {
+        padding: 30px 20px;
+    }
+
+    .volunteer-container h2 {
+        font-size: 2rem;
+    }
 
     .volunteer-highlights {
         grid-template-columns: 1fr;
     }
-
-    .volunteer-box h2 {
-        font-size: 2rem;
-    }
 }
+
 footer {
     text-align: center;
     padding: 25px;
     background: #183153;
     color: white;
 }
+
