@@ -1116,8 +1116,11 @@ main {
         display: inline-block;
         width: auto;
         min-width: 250px;
-        padding: 15px 25px;
+        padding: 14px 28px;
         font-size: 0.95rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -1173,7 +1176,10 @@ footer {
     }
 
     .volunteer-btn {
-        width: 100%;
-        max-width: 320px;
+    width: auto;
+    padding: 12px 24px;
+    font-size: 0.95rem;
     }
 }
+
+
