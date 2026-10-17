@@ -1013,3 +1013,51 @@ main {
 .form-group textarea {
     resize: vertical;
 }
+
+/* Volunteer Section */
+#contact {
+    padding: 80px 20px;
+    background: #f8fafc;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.3rem;
+    color: #183153;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    max-width: 850px;
+    margin: 0 auto 20px;
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.volunteer-action {
+    margin-top: 35px;
+}
+
+.volunteer-btn {
+    display: inline-block;
+    background: #183153;
+    color: #ffffff;
+    padding: 14px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.volunteer-btn:hover {
+    background: #0f2342;
+    transform: translateY(-3px);
+}
+
+.volunteer-note {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #777;
+}
