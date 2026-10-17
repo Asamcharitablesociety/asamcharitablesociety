@@ -1035,9 +1035,10 @@ main {
     font-size: 1.05rem;
 }
 
-/* =========================
+
+/* ==========================
    VOLUNTEER PAGE
-========================= */
+========================== */
 
 #contact {
     background: #f5f7fa;
@@ -1050,19 +1051,19 @@ main {
 }
 
 .volunteer-container {
-    max-width: 900px;
+    max-width: 1000px;
     width: 100%;
     text-align: center;
 
-    background: white;
-    padding: 50px;
-    border-radius: 15px;
+    background: #ffffff;
+    padding: 60px;
+    border-radius: 20px;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
 }
 
 .volunteer-container h2 {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     color: #0B3B75;
     margin-bottom: 10px;
 }
@@ -1076,52 +1077,71 @@ main {
 
 .volunteer-description {
     color: #555;
-    line-height: 1.8;
+    line-height: 1.9;
     font-size: 1.05rem;
-    max-width: 700px;
-    margin: 0 auto 35px;
+    max-width: 750px;
+    margin: 0 auto 40px;
 }
 
 .volunteer-highlights {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 
-    max-width: 700px;
-    margin: 0 auto 40px;
+    max-width: 850px;
+    margin: 0 auto 45px;
 }
 
-.highlight-item {
-    background: #f8fafc;
+.highlight-card {
+    background: #ffffff;
     padding: 18px;
-    border-radius: 10px;
+    border-radius: 12px;
 
-    font-weight: 600;
+    border: 1px solid #dbe3ea;
+
     color: #183153;
+    font-weight: 600;
 
-    border-left: 4px solid #0B3B75;
+    transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+    border-color: #0B3B75;
 }
 
 .volunteer-btn {
     display: inline-block;
 
-    background: #0B3B75;
-    color: #fff;
+    background: linear-gradient(135deg,#0B3B75,#1459a6);
 
+    color: white;
     text-decoration: none;
 
-    padding: 16px 40px;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 18px 45px;
 
     border-radius: 50px;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    box-shadow: 0 10px 25px rgba(11,59,117,0.25);
 
     transition: all 0.3s ease;
 }
 
 .volunteer-btn:hover {
-    background: #1459a6;
-    transform: translateY(-3px);
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 15px 30px rgba(11,59,117,0.35);
+
+    background: linear-gradient(135deg,#1459a6,#0B3B75);
 }
 
 .volunteer-note {
@@ -1133,12 +1153,21 @@ main {
     font-weight: 600;
 }
 
-/* Active Menu */
+/* Active Menu Highlight */
 
-nav .active {
+nav ul li a.active {
     border: 2px solid white;
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 5px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #0B3B75;
+    color: white;
 }
 
 /* Mobile */
@@ -1146,7 +1175,7 @@ nav .active {
 @media (max-width: 768px) {
 
     .volunteer-container {
-        padding: 30px 20px;
+        padding: 35px 20px;
     }
 
     .volunteer-container h2 {
@@ -1156,12 +1185,9 @@ nav .active {
     .volunteer-highlights {
         grid-template-columns: 1fr;
     }
-}
 
-footer {
-    text-align: center;
-    padding: 25px;
-    background: #183153;
-    color: white;
+    .volunteer-btn {
+        width: 100%;
+        max-width: 320px;
+    }
 }
-
