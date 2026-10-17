@@ -1083,56 +1083,42 @@ main {
     margin: 0 auto 40px;
 }
 
-.volunteer-highlights {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-
-    max-width: 850px;
-    margin: 0 auto 45px;
+.volunteer-services {
+    margin: 30px 0;
 }
 
-.highlight-card {
-    background: #ffffff;
-    padding: 18px;
-    border-radius: 12px;
-
-    border: 1px solid #dbe3ea;
-
+.volunteer-services p {
+    margin: 10px 0;
+    font-size: 1.05rem;
     color: #183153;
     font-weight: 600;
-
-    transition: all 0.3s ease;
 }
 
-.highlight-card:hover {
-    transform: translateY(-5px);
+@media (max-width: 768px) {
 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    .volunteer-container {
+        padding: 25px 15px;
+    }
 
-    border-color: #0B3B75;
-}
+    .volunteer-container h2 {
+        font-size: 2rem;
+    }
 
-.volunteer-btn {
-    display: inline-block;
+    .volunteer-subtitle {
+        font-size: 1rem;
+    }
 
-    background: linear-gradient(135deg,#0B3B75,#1459a6);
+    .volunteer-description {
+        font-size: 1rem;
+    }
 
-    color: white;
-    text-decoration: none;
-
-    padding: 18px 45px;
-
-    border-radius: 50px;
-
-    font-size: 1.05rem;
-    font-weight: 700;
-
-    letter-spacing: 0.5px;
-
-    box-shadow: 0 10px 25px rgba(11,59,117,0.25);
-
-    transition: all 0.3s ease;
+    .volunteer-btn {
+        display: inline-block;
+        width: auto;
+        min-width: 250px;
+        padding: 14px 25px;
+        font-size: 0.95rem;
+    }
 }
 
 .volunteer-btn:hover {
