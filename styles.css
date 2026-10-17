@@ -1117,18 +1117,15 @@ main {
     background-color: #0B3B75 !important;
     color: white !important;
     text-decoration: none !important;
-
     padding: 14px 28px !important;
-
     border-radius: 30px !important;
-
     font-size: 15px;
     font-weight: 600;
-
     margin-top: 15px;
-
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
+    width: auto;
+    font-size: 0.95rem;
+    }
 
 }
 
