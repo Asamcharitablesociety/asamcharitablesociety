@@ -1188,4 +1188,52 @@ footer {
     
 }
 
+/* Contact us */
+#contact {
+    max-width: none;
+    padding: 65px 20px;
+    text-align: center;
+    background: #ffffff;
+}
+
+#Apply as Volunteer h2 {
+    margin-bottom: 16px;
+    color: #003366;
+    font-size: clamp(27px, 3.5vw, 36px);
+    text-align: center;
+}
+
+#Apply as Volunteer p {
+    max-width: 720px;
+    margin: 0 auto 25px;
+    color: #52616b;
+    line-height: 1.8;
+    text-align: center;
+}
+
+
+
+/* Social Media */
+#Social Media {
+    max-width: none;
+    padding: 65px 20px;
+    text-align: center;
+    background: #ffffff;
+}
+
+#Follow US h2 {
+    margin-bottom: 16px;
+    color: #003366;
+    font-size: clamp(27px, 3.5vw, 36px);
+    text-align: center;
+}
+
+#Follow US p {
+    max-width: 720px;
+    margin: 0 auto 25px;
+    color: #52616b;
+    line-height: 1.8;
+    text-align: center;
+}
+
 
